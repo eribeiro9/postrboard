@@ -20,7 +20,7 @@ Login = React.createClass({
         <h2 className="ui teal center aligned header">Login</h2>
 
         <form className="ui large form" onSubmit={ this.login }>
-          <div className="ui stacked segment">
+          <div className="ui raised segment">
             <div className="field">
               <div className="ui left icon input">
                 <i className="icon fa fa-user"></i>

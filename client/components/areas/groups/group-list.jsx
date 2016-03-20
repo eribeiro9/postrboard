@@ -52,17 +52,27 @@ GroupList = React.createClass({
 
     if (this.state.addingGroup) {
       groupButton = <button onClick={ this.cancel } className="ui fluid red button">Cancel</button>
-      groupForm = <AddGroupForm hide={ this.cancel } />
+      groupForm = (
+        <div className="ui segment">
+          <AddGroupForm hide={ this.cancel } />
+        </div>
+      )
     } else {
       groupButton = <button onClick={ this.addGroup } className="ui fluid green button">Add group</button>
     }
 
     return (
       <div className="ten wide column">
-        { groupButton }
-        { groupForm }
-        <div className="ui celled selection list">
-          { this.renderGroups() }
+        <div className="ui raised segments">
+          <div className="ui segment">
+            { groupButton }
+          </div>
+          { groupForm }
+          <div className="ui not padded segment">
+            <div className="ui divided selection list">
+              { this.renderGroups() }
+            </div>
+          </div>
         </div>
       </div>
     )

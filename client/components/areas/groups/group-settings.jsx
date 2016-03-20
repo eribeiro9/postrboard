@@ -10,6 +10,18 @@ GroupSettings = React.createClass({
     }
   },
 
+  resetForm(e) {
+    e.preventDefault()
+
+    e.target.name.value = this.props.group.name
+    e.target.description.value = this.props.group.description
+    e.target.isPrivate.value = this.props.group.isPrivate
+
+    this.setState({
+      isDisabled: true
+    })
+  },
+
   changeForm(e) {
     e.preventDefault()
 
@@ -51,14 +63,14 @@ GroupSettings = React.createClass({
     let name = this.props.group.name
     let description = this.props.group.description
     let isPrivate = this.props.group.isPrivate
-    let buttonClass = 'ui fluid primary button'
+    let buttonClass = 'ui fluid button'
 
     if (this.state.isDisabled) buttonClass += ' disabled'
 
     return (
       <div className="ten wide column">
-        <form onChange={ this.changeForm } onSubmit={ this.updateGroup } className="ui form">
-          <div className="ui stacked segment">
+        <form onChange={ this.changeForm } onSubmit={ this.updateGroup } onReset={ this.resetForm } className="ui form">
+          <div className="ui raised segment">
             <div className="field">
               <label>Group Name</label>
               <input type="text" name="name" placeholder="Group Name" defaultValue={ name } />
@@ -73,7 +85,8 @@ GroupSettings = React.createClass({
                 <input type="checkbox" name="isPrivate" className="hidden" defaultValue={ isPrivate } />
               </div>
             </div>
-            <input type="submit" value="Submit" className={ buttonClass } />
+            <input type="submit" value="Submit" className={ buttonClass + ' primary' } />
+            <input type="reset" value="Reset" className={ buttonClass } />
           </div>
         </form>
       </div>

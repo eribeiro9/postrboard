@@ -27,7 +27,7 @@ Register = React.createClass({
         <h2 className="ui teal center aligned header">Register</h2>
 
         <form className="ui form" onSubmit={ this.register }>
-          <div className="ui stacked segment">
+          <div className="ui raised segment">
             <div className="field">
               <label>Username</label>
               <input type="text" name="username" placeholder="Username" />

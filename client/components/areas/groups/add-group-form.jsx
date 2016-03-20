@@ -29,21 +29,19 @@ AddGroupForm = React.createClass({
   render() {
     return (
       <form className="ui form" onSubmit={ this.createGroup }>
-        <div className="ui stacked segment">
-          <div className="field">
-            <label>Group name</label>
-            <input type="text" name="name" placeholder="Group name" />
-          </div>
-          <div className="field">
-            <label>Unique identifier</label>
-            <input type="text" name="unique" placeholder="Unique identifier" />
-          </div>
-          <div className="field">
-            <label>Optional description</label>
-            <input type="text" name="description" placeholder="Optional description" />
-          </div>
-          <input type="submit" value="Add" className="ui fluid primary button" />
+        <div className="field">
+          <label>Group name</label>
+          <input type="text" name="name" placeholder="Group name" />
         </div>
+        <div className="field">
+          <label>Unique identifier</label>
+          <input type="text" name="unique" placeholder="Unique identifier" />
+        </div>
+        <div className="field">
+          <label>Optional description</label>
+          <input type="text" name="description" placeholder="Optional description" />
+        </div>
+        <input type="submit" value="Add" className="ui fluid primary button" />
       </form>
     )
   }

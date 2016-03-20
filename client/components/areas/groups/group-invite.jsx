@@ -60,7 +60,7 @@ GroupInvite = React.createClass({
             <p>TODO: User filter</p>
           </div>
           <div className="ui not padded segment">
-            <div className="ui middle aligned celled list">
+            <div className="ui middle aligned divided list">
               { this.renderUsers() }
             </div>
           </div>
