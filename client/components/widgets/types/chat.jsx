@@ -47,8 +47,10 @@ Chat = React.createClass({
   renderMessageBlocks() {
     return this.messagesBySender().map((m) => (
       <div className="item">
-        <div className="header">{ m.sender }</div>
-        {  this.renderMessages(m) }
+        <div className="content">
+          <div className="ui header">{ m.sender }</div>
+          {  this.renderMessages(m) }
+        </div>
       </div>
     ))
   },
@@ -60,9 +62,9 @@ Chat = React.createClass({
           { this.renderMessageBlocks() }
         </div>
         <div className="chat-footer">
-          <form onSubmit={ this.postMessage }>
+          <form onSubmit={ this.postMessage } className="ui form">
             <input type="text" name="chat" placeholder="Enter message..." />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="ui fluid button" />
           </form>
         </div>
       </div>
