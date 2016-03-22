@@ -41,7 +41,7 @@ GroupWidget = React.createClass({
       id: this.props.widget.id
     }, (err, res) => {
       if (!err) {
-        //this.stopDelete()
+        this.stopDelete()
       } else {
         toastr.error(err.reason)
       }
