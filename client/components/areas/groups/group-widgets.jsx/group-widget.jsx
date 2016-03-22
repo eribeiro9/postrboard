@@ -6,7 +6,8 @@ GroupWidget = React.createClass({
 
   getInitialState() {
     return {
-      editingWidget: false
+      editingWidget: false,
+      deletingWidget: false
     }
   },
 
@@ -22,12 +23,43 @@ GroupWidget = React.createClass({
     })
   },
 
+  showDelete() {
+    this.setState({
+      deletingWidget: true
+    })
+  },
+
+  stopDelete() {
+    this.setState({
+      deletingWidget: false
+    })
+  },
+
+  deleteWidget() {
+    Meteor.call('deleteWidget', {
+      unique: FlowRouter.current().params.groupId,
+      id: this.props.widget.id
+    }, (err, res) => {
+      if (!err) {
+        //this.stopDelete()
+      } else {
+        toastr.error(err.reason)
+      }
+    })
+  },
+
   render() {
-    let editItem
+    let editItem, deleteItem
 
     if (this.state.editingWidget) {
-      editItem = (
-        <EditWidgetForm widget={ this.props.widget } hide={ this.stopEdit } />
+      editItem = <EditWidgetForm widget={ this.props.widget } hide={ this.stopEdit } />
+    } else if (this.state.deletingWidget) {
+      deleteItem = (
+        <div>
+          <h3 className="ui header">Delete widget?</h3>
+          <button type="button" onClick={ this.deleteWidget } className="ui red fluid button">Delete</button>
+          <button type="button" onClick={ this.stopDelete } className="ui fluid button">Cancel</button>
+        </div>
       )
     }
 
@@ -38,7 +70,7 @@ GroupWidget = React.createClass({
             <button type="button" onClick={ this.editWidget } className="ui icon button">
               <i className="fa fa-cog icon"></i>
             </button>
-            <button type="button" className="ui icon button">
+            <button type="button" onClick={ this.showDelete } className="ui icon button">
               <i className="fa fa-times icon"></i>
             </button>
           </div>
@@ -47,6 +79,7 @@ GroupWidget = React.createClass({
           { this.props.widget.header.title }
         </div>
         { editItem }
+        { deleteItem }
       </div>
     )
   }

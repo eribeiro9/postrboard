@@ -58,7 +58,7 @@ Chat = React.createClass({
   render() {
     return (
       <div>
-        <div className="ui list">
+        <div className="ui divided list">
           { this.renderMessageBlocks() }
         </div>
         <div className="chat-footer">

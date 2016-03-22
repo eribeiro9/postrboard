@@ -7,6 +7,7 @@ Widget = React.createClass({
     let widget = this.props.widget
     let header = widget.header
     let content = <p>Not a valid widget type</p>
+    let cardClass = "ui card " + header.color
 
     switch (widget.type) {
       case 'chat':
@@ -15,9 +16,9 @@ Widget = React.createClass({
     }
 
     return (
-      <div className="ui card">
-        <div className="header">{ widget.header.title }</div>
-        <div className="content">{ content }</div>
+      <div className={ cardClass }>
+        <h2 className="ui header">{ header.title }</h2>
+        <div className="left aligned content">{ content }</div>
       </div>
     )
   }

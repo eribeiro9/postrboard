@@ -6,8 +6,7 @@ GroupWidgets = React.createClass({
 
   getInitialState() {
     return {
-      addingWidget: false,
-      showWarningModal: false
+      addingWidget: false
     }
   },
 
@@ -23,21 +22,9 @@ GroupWidgets = React.createClass({
     })
   },
 
-  showModal() {
-    this.setState({
-      showWarningModal: true
-    })
-  },
-
-  hideModal() {
-    this.setState({
-      showWarningModal: false
-    })
-  },
-
   renderWidgets() {
     return this.props.group.widgets.map((w) =>
-      <GroupWidget widget={ w } showModal={ this.showModal } />
+      <GroupWidget widget={ w } />
     )
   },
 
