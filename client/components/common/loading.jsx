@@ -1,5 +1,5 @@
 Loading = React.createClass({
   render() {
-    return <div className="ui loading segment"></div>
+    return <div id="loading" className="ui loading segment"></div>
   }
 })

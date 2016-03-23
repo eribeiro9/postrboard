@@ -20,16 +20,24 @@
 }
 
 #home-greeting {
-  height: 40rem;
+  height: 33rem;
   padding-top: 10rem;
+
+  & > h1 {
+    font-size: 3rem;
+  }
 }
 
 #home-description {
-  height: 10rem;
+  height: 40rem;
 }
 
 #home-teasers {
-  height: 20rem;
+  height: 80rem;
+}
+
+#loading {
+  height: 40rem;
 }
 
 .ui.not.padded.segment {
@@ -39,5 +47,13 @@
 @media only screen and (max-width: 700px) {
   .desktop-text {
     display: none;
+  }
+
+  #home-description {
+    height: 30rem;
+  }
+
+  #home-teasers {
+    height: 100rem;
   }
 }
