@@ -62,15 +62,17 @@ GroupList = React.createClass({
     }
 
     return (
-      <div className="ten wide column">
-        <div className="ui raised segments">
-          <div className="ui segment">
-            { groupButton }
-          </div>
-          { groupForm }
-          <div className="ui not padded segment">
-            <div className="ui divided selection list">
-              { this.renderGroups() }
+      <div id="layout-content" className="ui centered grid">
+        <div className="ten wide column">
+          <div className="ui raised segments">
+            <div className="ui segment">
+              { groupButton }
+            </div>
+            { groupForm }
+            <div className="ui not padded segment">
+              <div className="ui divided selection list">
+                { this.renderGroups() }
+              </div>
             </div>
           </div>
         </div>

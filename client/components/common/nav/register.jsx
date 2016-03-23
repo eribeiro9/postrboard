@@ -23,29 +23,31 @@ Register = React.createClass({
 
   render() {
     return (
-      <div className="fourteen wide column">
-        <h2 className="ui teal center aligned header">Register</h2>
+      <div id="layout-content" className="ui centered grid">
+        <div className="fourteen wide column">
+          <h2 className="ui teal center aligned header">Register</h2>
 
-        <form className="ui form" onSubmit={ this.register }>
-          <div className="ui raised segment">
-            <div className="field">
-              <label>Username</label>
-              <input type="text" name="username" placeholder="Username" />
+          <form className="ui form" onSubmit={ this.register }>
+            <div className="ui raised segment">
+              <div className="field">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Username" />
+              </div>
+              <div className="field">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Password" />
+              </div>
+              <div className="field">
+                <label>Verify Password</label>
+                <input type="password" name="verify" placeholder="Verify Password" />
+              </div>
+              <input type="submit" value="Register" className="ui fluid large teal submit button" />
             </div>
-            <div className="field">
-              <label>Password</label>
-              <input type="password" name="password" placeholder="Password" />
-            </div>
-            <div className="field">
-              <label>Verify Password</label>
-              <input type="password" name="verify" placeholder="Verify Password" />
-            </div>
-            <input type="submit" value="Register" className="ui fluid large teal submit button" />
+          </form>
+
+          <div className="ui message">
+            Already have an account? <a href="/login">Login</a>
           </div>
-        </form>
-
-        <div className="ui message">
-          Already have an account? <a href="/login">Login</a>
         </div>
       </div>
     )

@@ -44,7 +44,7 @@ Layout = React.createClass({
 
     return (
       <div>
-        <div id="layout-content" className="ui centered grid">{ content }</div>
+        { content }
         <SiteNav user={ this.data.user }/>
         { groupAdminNav }
       </div>

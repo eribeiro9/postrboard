@@ -68,27 +68,29 @@ GroupSettings = React.createClass({
     if (this.state.isDisabled) buttonClass += ' disabled'
 
     return (
-      <div className="ten wide column">
-        <form onChange={ this.changeForm } onSubmit={ this.updateGroup } onReset={ this.resetForm } className="ui form">
-          <div className="ui raised segment">
-            <div className="field">
-              <label>Group Name</label>
-              <input type="text" name="name" placeholder="Group Name" defaultValue={ name } />
-            </div>
-            <div className="field">
-              <label>Group Description</label>
-              <input type="text" name="description" placeholder="Group Description" defaultValue={ description } />
-            </div>
-            <div className="inline field">
-              <div className="ui toggle checkbox">
-                <label>Private Group</label>
-                <input type="checkbox" name="isPrivate" className="hidden" defaultValue={ isPrivate } />
+      <div id="layout-content" className="ui centered grid">
+        <div className="ten wide column">
+          <form onChange={ this.changeForm } onSubmit={ this.updateGroup } onReset={ this.resetForm } className="ui form">
+            <div className="ui raised segment">
+              <div className="field">
+                <label>Group Name</label>
+                <input type="text" name="name" placeholder="Group Name" defaultValue={ name } />
               </div>
+              <div className="field">
+                <label>Group Description</label>
+                <input type="text" name="description" placeholder="Group Description" defaultValue={ description } />
+              </div>
+              <div className="inline field">
+                <div className="ui toggle checkbox">
+                  <label>Private Group</label>
+                  <input type="checkbox" name="isPrivate" className="hidden" defaultValue={ isPrivate } />
+                </div>
+              </div>
+              <input type="submit" value="Submit" className={ buttonClass + ' primary' } />
+              <input type="reset" value="Reset" className={ buttonClass } />
             </div>
-            <input type="submit" value="Submit" className={ buttonClass + ' primary' } />
-            <input type="reset" value="Reset" className={ buttonClass } />
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     )
   }

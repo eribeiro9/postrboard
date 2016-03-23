@@ -49,20 +49,22 @@ GroupPermissions = React.createClass({
     if (this.data.isLoading) return <Loading />
 
     return (
-      <div className="ten wide column">
-        <div className="ui raised segments">
-          <div className="ui segment">
-            <h4 className="ui header">Grant Admins</h4>
-          </div>
-          <div className="ui segment">
-            <p>Grant group users admin permissions</p>
-          </div>
-          <div className="ui segment">
-            <p>TODO: User filter</p>
-          </div>
-          <div className="ui not padded segment">
-            <div className="ui middle aligned divided list">
-              { this.renderUsers() }
+      <div id="layout-content" className="ui centered grid">
+        <div className="ten wide column">
+          <div className="ui raised segments">
+            <div className="ui segment">
+              <h4 className="ui header">Grant Admins</h4>
+            </div>
+            <div className="ui segment">
+              <p>Grant group users admin permissions</p>
+            </div>
+            <div className="ui segment">
+              <p>TODO: User filter</p>
+            </div>
+            <div className="ui not padded segment">
+              <div className="ui middle aligned divided list">
+                { this.renderUsers() }
+              </div>
             </div>
           </div>
         </div>
