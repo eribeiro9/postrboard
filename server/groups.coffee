@@ -46,7 +46,7 @@ Meteor.methods
         id: lowestId widgets
         header:
           title: obj.title
-          color: 'red'
+          color: 'black'
         type: obj.type
         content: content
       Groups.update group._id, $set:

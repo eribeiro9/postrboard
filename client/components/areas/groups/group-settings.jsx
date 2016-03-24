@@ -69,9 +69,9 @@ GroupSettings = React.createClass({
 
     return (
       <div id="layout-content" className="ui centered grid">
-        <div className="ten wide column">
+        <div className="thirteen wide right floated column">
           <form onChange={ this.changeForm } onSubmit={ this.updateGroup } onReset={ this.resetForm } className="ui form">
-            <div className="ui raised segment">
+            <div id="floating-column" className="ui raised segment">
               <div className="field">
                 <label>Group Name</label>
                 <input type="text" name="name" placeholder="Group Name" defaultValue={ name } />

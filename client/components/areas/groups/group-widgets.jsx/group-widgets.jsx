@@ -40,14 +40,14 @@ GroupWidgets = React.createClass({
 
     return (
       <div id="layout-content" className="ui centered grid">
-        <div className="ten wide column">
-          <div className="ui raised segments">
+        <div className="thirteen wide right floated column">
+          <div id="floating-column" className="ui raised segments">
             <div className="ui segment">
               { widgetButton }
             </div>
             { widgetSegment }
             <div className="ui not padded segment">
-              <div className="ui divided selection list">
+              <div className="ui divided list">
                 { this.renderWidgets() }
               </div>
             </div>

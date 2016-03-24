@@ -25,10 +25,10 @@ Register = React.createClass({
     return (
       <div id="layout-content" className="ui centered grid">
         <div className="fourteen wide column">
-          <h2 className="ui teal center aligned header">Register</h2>
+          <h2 className="ui center aligned header">Register</h2>
 
           <form className="ui form" onSubmit={ this.register }>
-            <div className="ui raised segment">
+            <div id="floating-column" className="ui raised segment">
               <div className="field">
                 <label>Username</label>
                 <input type="text" name="username" placeholder="Username" />
@@ -41,7 +41,7 @@ Register = React.createClass({
                 <label>Verify Password</label>
                 <input type="password" name="verify" placeholder="Verify Password" />
               </div>
-              <input type="submit" value="Register" className="ui fluid large teal submit button" />
+              <input type="submit" value="Register" className="ui fluid large primary submit button" />
             </div>
           </form>
 

@@ -18,10 +18,10 @@ Login = React.createClass({
     return (
       <div id="layout-content" className="ui centered grid">
         <div className="fourteen wide column">
-          <h2 className="ui teal center aligned header">Login</h2>
+          <h2 className="ui center aligned header">Login</h2>
 
           <form className="ui large form" onSubmit={ this.login }>
-            <div className="ui raised segment">
+            <div id="floating-column" className="ui raised segment">
               <div className="field">
                 <div className="ui left icon input">
                   <i className="icon fa fa-user"></i>
@@ -34,7 +34,7 @@ Login = React.createClass({
                   <input type="password" name="password" placeholder="Password" />
                 </div>
               </div>
-              <input type="submit" value="Login" className="ui fluid large teal submit button" />
+              <input type="submit" value="Login" className="ui fluid large primary submit button" />
             </div>
             <div className="ui error message"></div>
           </form>

@@ -11,27 +11,31 @@ GroupWidget = React.createClass({
     }
   },
 
-  editWidget() {
+  toggleEdit() {
     this.setState({
-      editingWidget: true
+      editingWidget: !this.state.editingWidget,
+      deletingWidget: false
     })
   },
 
   stopEdit() {
     this.setState({
-      editingWidget: false
+      editingWidget: false,
+      deletingWidget: false
     })
   },
 
-  showDelete() {
+  toggleDelete() {
     this.setState({
-      deletingWidget: true
+      deletingWidget: !this.state.deletingWidget,
+      editingWidget: false
     })
   },
 
   stopDelete() {
     this.setState({
-      deletingWidget: false
+      deletingWidget: false,
+      editingWidget: false
     })
   },
 
@@ -67,10 +71,10 @@ GroupWidget = React.createClass({
       <div className="ui item">
         <div className="right floated content">
           <div className="ui icon buttons">
-            <button type="button" onClick={ this.editWidget } className="ui icon button">
+            <button type="button" onClick={ this.toggleEdit } className="ui icon button">
               <i className="fa fa-cog icon"></i>
             </button>
-            <button type="button" onClick={ this.showDelete } className="ui icon button">
+            <button type="button" onClick={ this.toggleDelete } className="ui icon button">
               <i className="fa fa-times icon"></i>
             </button>
           </div>
