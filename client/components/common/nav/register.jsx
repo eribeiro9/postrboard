@@ -12,7 +12,7 @@ Register = React.createClass({
         password: password
       }, (err) => {
         if (!err) {
-          FlowRouter.go('/')
+          FlowRouter.go('my-groups')
           toastr.success('Created user ' + username)
         } else {
           toastr.error(err.reason)

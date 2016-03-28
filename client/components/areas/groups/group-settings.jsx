@@ -6,7 +6,7 @@ GroupSettings = React.createClass({
 
   getInitialState() {
     return {
-      isDisabled: true
+      isChanged: false
     }
   },
 
@@ -18,7 +18,7 @@ GroupSettings = React.createClass({
     e.target.isPrivate.value = this.props.group.isPrivate
 
     this.setState({
-      isDisabled: true
+      isChanged: false
     })
   },
 
@@ -33,9 +33,9 @@ GroupSettings = React.createClass({
     let groupIsPrivate = this.props.group.isPrivate
 
     this.setState({
-      isDisabled: formName == groupName
-               && formDescription == groupDescription
-               && formIsPrivate == groupIsPrivate
+      isChanged: formName == groupName
+              && formDescription == groupDescription
+              && formIsPrivate == groupIsPrivate
     })
   },
 
@@ -51,7 +51,7 @@ GroupSettings = React.createClass({
       if (!err) {
         toastr.success('Updated group')
         this.setState({
-          isDisabled: true
+          isChanged: false
         })
       } else {
         toastr.error(err.reason)
@@ -65,7 +65,7 @@ GroupSettings = React.createClass({
     let isPrivate = this.props.group.isPrivate
     let buttonClass = 'ui fluid button'
 
-    if (this.state.isDisabled) buttonClass += ' disabled'
+    if (!this.state.isChanged) buttonClass += ' disabled'
 
     return (
       <div id="layout-content" className="ui centered grid">

@@ -7,7 +7,7 @@ Login = React.createClass({
 
     Meteor.loginWithPassword(user, password, (err) => {
       if (!err) {
-        FlowRouter.go('/')
+        FlowRouter.go('my-groups')
       } else {
         toastr.error(err.reason)
       }

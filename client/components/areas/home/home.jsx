@@ -8,7 +8,12 @@ Home = React.createClass({
     let topButtons
 
     if (user) {
-      topButtons = <p>Welcome back { user.username }!</p>
+      topButtons = (
+        <div>
+          <p>Welcome back { user.username }!</p>
+          <a href="/groups" className="ui large primary button">Go to your groups</a>
+        </div>
+      )
     } else {
       topButtons = (
         <div>
@@ -23,7 +28,7 @@ Home = React.createClass({
         <div id="home-header" className="ui vertical center aligned segment">
           <div id="home-greeting" className="ui text container">
             <h1 className="ui header">Postrboard</h1>
-            <h3>An online community bulletin board</h3>
+            <h2>An online community bulletin board</h2>
             { topButtons }
           </div>
         </div>
