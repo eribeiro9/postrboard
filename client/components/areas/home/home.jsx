@@ -11,14 +11,14 @@ Home = React.createClass({
       topButtons = (
         <div>
           <p>Welcome back { user.username }!</p>
-          <a href="/groups" className="ui large primary button">Go to your groups</a>
+          <a href="/groups" className="ui large inverted black button">Go to your groups</a>
         </div>
       )
     } else {
       topButtons = (
         <div>
-          <a href="/login" className="ui large primary button">Login</a>
-          <a href="/register" className="ui large button">Register</a>
+          <a href="/login" className="ui large inverted black button">Login</a>
+          <a href="/register" className="ui large inverted button">Register</a>
         </div>
       )
     }

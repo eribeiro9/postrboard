@@ -3,11 +3,24 @@ Widget = React.createClass({
     widget: React.PropTypes.object.isRequired
   },
 
+  getInitialState() {
+    return {
+      isCollapsed: false
+    }
+  },
+
+  toggleCollapse() {
+    this.setState({
+      isCollapsed: !this.state.isCollapsed
+    })
+  },
+
   render() {
     let widget = this.props.widget
     let header = widget.header
     let content = <p>Not a valid widget type</p>
     let cardClass = 'ui card ' + header.color
+    let toggleClass = 'chevron-left'
 
     switch (widget.type) {
       case 'chat':
@@ -15,10 +28,20 @@ Widget = React.createClass({
         break
     }
 
+    if (!this.state.isCollapsed) {
+      var cardContent = <div className="left aligned content">{ content }</div>
+      toggleClass = 'chevron-down'
+    }
+
+    let iconClass = 'fa fa-' + toggleClass
+
     return (
       <div id="floating-column" className={ cardClass }>
-        <h2 className="ui header">{ header.title }</h2>
-        <div className="left aligned content">{ content }</div>
+        <div className="content">
+          <a onClick={ this.toggleCollapse } className="right floated"><i className={ iconClass }></i></a>
+          <div className="center aligned header">{ header.title }</div>
+        </div>
+        { cardContent }
       </div>
     )
   }

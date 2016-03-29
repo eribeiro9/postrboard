@@ -4,17 +4,17 @@ WidgetWall = React.createClass({
   },
 
   renderWidgets() {
-    return this.props.widgets.map((w) => (
-      <div key={ w.id }>
+    return this.props.widgets.map((w, i) => (
+      <div key={ i } className="sixteen wide mobile eight wide tablet four wide computer column">
         <Widget widget={ w } />
       </div>
     ))
   },
 
   render() {
-    // TODO: pass in if static or not
+    // TODO: either show responsive or bulletin view
     return (
-      <div>
+      <div id="layout-content" className="ui grid">
         { this.renderWidgets() }
       </div>
     )

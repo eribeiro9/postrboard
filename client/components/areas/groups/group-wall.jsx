@@ -7,10 +7,6 @@ GroupWall = React.createClass({
   render() {
     let widgets = this.props.group.widgets
 
-    return (
-      <div id="layout-content" className="ui centered grid">
-        <WidgetWall widgets={ widgets } />
-      </div>
-    )
+    return <WidgetWall widgets={ widgets } />
   }
 })

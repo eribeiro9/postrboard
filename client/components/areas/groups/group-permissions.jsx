@@ -20,6 +20,16 @@ GroupPermissions = React.createClass({
     let groupAdmins = this.props.group.admins
     let users = this.data.users.filter((u) => !groupAdmins.includes(u._id))
 
+    if (users.length == 0) {
+      return (
+        <div className="item">
+          <div className="content">
+            No available users found
+          </div>
+        </div>
+      )
+    }
+
     return users.map((u) => {
       let addUser = (e) => {
         Meteor.call('grantUserGroupAdmin', {

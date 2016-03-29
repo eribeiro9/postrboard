@@ -39,14 +39,14 @@ Chat = React.createClass({
   },
 
   renderMessages(messageList) {
-    return messageList.messages.map((m) =>
-      <div className="description">{ m.text }</div>
+    return messageList.messages.map((m, i) =>
+      <div key={ i } className="description">{ m.text }</div>
     )
   },
 
   renderMessageBlocks() {
-    return this.messagesBySender().map((m) => (
-      <div className="item">
+    return this.messagesBySender().map((m, i) => (
+      <div key={ i } className="item">
         <div className="content">
           <div className="ui header">{ m.sender }</div>
           {  this.renderMessages(m) }
