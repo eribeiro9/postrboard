@@ -1,9 +1,7 @@
-Chat = React.createClass({
-  propTypes: {
-    conversation: React.PropTypes.array.isRequired,
-    widgetId: React.PropTypes.number
-  },
+import React from 'react'
+import { Meteor } from 'meteor/meteor'
 
+export class Chat extends React.Component {
   postMessage(e) {
     e.preventDefault()
 
@@ -14,7 +12,7 @@ Chat = React.createClass({
     })
 
     e.target.chat.value = ''
-  },
+  }
 
   messagesBySender() {
     let conv = this.props.conversation
@@ -36,13 +34,13 @@ Chat = React.createClass({
     }
 
     return messages
-  },
+  }
 
   renderMessages(messageList) {
     return messageList.messages.map((m, i) =>
       <div key={ i } className="description">{ m.text }</div>
     )
-  },
+  }
 
   renderMessageBlocks() {
     return this.messagesBySender().map((m, i) => (
@@ -53,7 +51,7 @@ Chat = React.createClass({
         </div>
       </div>
     ))
-  },
+  }
 
   render() {
     return (
@@ -70,4 +68,9 @@ Chat = React.createClass({
       </div>
     )
   }
-})
+}
+
+Chat.propTypes = {
+  conversation: React.PropTypes.array.isRequired,
+  widgetId: React.PropTypes.number
+}

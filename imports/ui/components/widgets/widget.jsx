@@ -1,19 +1,20 @@
-Widget = React.createClass({
-  propTypes: {
-    widget: React.PropTypes.object.isRequired
-  },
+import React from 'react'
 
-  getInitialState() {
-    return {
+import { Chat } from './types/chat.jsx'
+
+export class Widget extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
       isCollapsed: false
     }
-  },
+  }
 
   toggleCollapse() {
     this.setState({
       isCollapsed: !this.state.isCollapsed
     })
-  },
+  }
 
   render() {
     let widget = this.props.widget
@@ -45,4 +46,8 @@ Widget = React.createClass({
       </div>
     )
   }
-})
+}
+
+Widget.propTypes = {
+  widget: React.PropTypes.object.isRequired
+}

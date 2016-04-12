@@ -1,3 +1,5 @@
+{ Accounts } = require 'meteor/accounts-base'
+
 Accounts.onCreateUser (options, user) ->
   user.profile = options.profile ? {}
   user.emails ?= []
