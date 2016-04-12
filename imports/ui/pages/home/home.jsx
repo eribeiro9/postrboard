@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { HomeTeasers } from './home-teasers.jsx'
+import HomeTeasers from './home-teasers.jsx'
 
 export default class Home extends React.Component {
   render() {

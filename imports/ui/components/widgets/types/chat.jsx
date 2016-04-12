@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meteor } from 'meteor/meteor'
 
-export class Chat extends React.Component {
+export default class Chat extends React.Component {
   postMessage(e) {
     e.preventDefault()
 

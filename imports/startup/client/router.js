@@ -1,12 +1,16 @@
 import { FlowRouter } from 'meteor/kadira:flow-router'
 import { mount } from 'react-mounter'
 
-import { Home } from '../../ui/pages/home/home.jsx'
+import UserContainer from '../../ui/containers/userContainer.js'
+let pages = '../../ui/pages'
+import Home from "#{pages}/home/home.jsx"
+import Login from "#{pages}/login.jsx"
+import Register from "#{pages}/register.jsx"
 
 FlowRouter.route('/', {
   name: 'home',
   action() {
-    mount(Layout, {
+    mount(UserContainer, {
       content: <Home />
     })
   }
@@ -15,7 +19,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/login', {
   name: 'login',
   action() {
-    ReactLayout.render(Layout, {
+    mount(UserContainer, {
       content: <Login />
     })
   }
@@ -24,12 +28,13 @@ FlowRouter.route('/login', {
 FlowRouter.route('/register', {
   name: 'register',
   action() {
-    ReactLayout.render(Layout, {
+    mount(UserContainer, {
       content: <Register />
     })
   }
 })
 
+/*
 FlowRouter.route('/groups', {
   name: 'my-groups',
   action() {
@@ -105,3 +110,4 @@ groupAdminRoutes.route('/permissions', {
     })
   }
 })
+*/

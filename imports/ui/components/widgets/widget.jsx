@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Chat } from './types/chat.jsx'
+import Chat from './types/chat.jsx'
 
-export class Widget extends React.Component {
+export default class Widget extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

@@ -1,16 +1,17 @@
-SiteNav = React.createClass({
-  propTypes: {
-    user: React.PropTypes.object
-  },
+import React from 'react'
+import { Meteor } from 'meteor/meteor'
+import { FlowRouter } from 'meteor/kadira:flow-router'
+import { $ } from 'meteor/jquery'
 
+export default class SiteNav extends React.Component {
   componentDidMount() {
     $('#collapse-bar').dropdown()
-  },
+  }
 
   logout(e) {
     FlowRouter.go('home')
     Meteor.logout()
-  },
+  }
 
   render() {
     let userIcon, username, navMenu
@@ -47,4 +48,8 @@ SiteNav = React.createClass({
       </div>
     )
   }
-})
+}
+
+SiteNav.propTypes = {
+  user: React.PropTypes.object
+}
