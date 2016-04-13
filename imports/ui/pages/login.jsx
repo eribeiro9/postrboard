@@ -18,7 +18,7 @@ login = (e) => {
   })
 }
 
-export default const Login = () => (
+const Login = () => (
   <div id="layout-content" className="ui centered grid">
     <div className="fourteen wide column">
       <h2 className="ui center aligned header">Login</h2>
@@ -52,3 +52,5 @@ export default const Login = () => (
     </div>
   </div>
 )
+
+export default Login

@@ -1,5 +1,7 @@
 import React from 'react'
 
-export default const Loading = () => (
+const Loading = () => (
   <div id="loading" className="ui loading segment"></div>
 )
+
+export default Loading

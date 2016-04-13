@@ -25,7 +25,7 @@ register = (e) => {
   }
 }
 
-export default const Register = () => (
+const Register = () => (
   <div id="layout-content" className="ui centered grid">
     <div className="fourteen wide column">
       <h2 className="ui center aligned header">Register</h2>
@@ -54,3 +54,5 @@ export default const Register = () => (
     </div>
   </div>
 )
+
+export default Register

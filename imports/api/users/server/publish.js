@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 
-import { Users } from '../collection.coffee'
+import { Users } from '../collection.js'
 
 Meteor.publish('thisUser', () => Meteor.users.find(this.userId))
 

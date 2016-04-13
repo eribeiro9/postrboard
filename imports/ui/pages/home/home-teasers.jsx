@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default const HomeTeasers = () => (
+const HomeTeasers = () => (
   <div className="ui vertical center aligned segment">
     <div id="home-description" className="ui text container">
       <img src="/images/group-widgets.png" className="ui centered image" />
@@ -34,3 +34,5 @@ export default const HomeTeasers = () => (
     </div>
   </div>
 )
+
+export default HomeTeasers
