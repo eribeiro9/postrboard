@@ -1,0 +1,62 @@
+body {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 801px) {
+  .app-content {
+    margin-left: 16rem;
+  }
+}
+
+.landing-title-section {
+  padding: 5rem 0rem;
+  background-color: #8BC34A;
+}
+
+.landing-header {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  display: block;
+}
+
+.landing-subheader {
+  padding-top: 1rem;
+  text-align: center;
+  display: block;
+}
+
+.landing-purpose-section {
+  padding: 2rem 0rem;
+  background-color: #E0E0E0;
+}
+
+.landing-purpose {
+  text-align: center;
+  display: block;
+}
+
+.nav-header-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.board-name-container {
+  padding: 1rem 2rem;
+  display: inline;
+}
+
+.board-latestAction-container {
+  padding: 1rem 2rem 0rem 2rem;
+  display: block;
+}
+
+@media screen and (min-width: 801px) {
+  .board-latestAction-container {
+    display: inline;
+  }
+}
