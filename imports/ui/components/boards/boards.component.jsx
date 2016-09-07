@@ -24,16 +24,22 @@ export const Boards = ({ isLoading, boards }) => (
             paddingLeft: '0px',
           }}
         >
-          <div
-            className="board-name-container"
-            style={{
-              backgroundColor: b.color,
-            }}
-          >
-            { b.name }
-          </div>
-          <div className="board-latestAction-container">
-            { b.latestAction }
+          <div className="row">
+            <div
+              className="board-name-container"
+              style={{
+                backgroundColor: b.color,
+              }}
+            >
+              <span className="board-name">
+                { b.name }
+              </span>
+            </div>
+            <div className="board-latestAction-container border--bottom grow">
+              <span className="board-latestAction">
+                { b.latestAction }
+              </span>
+            </div>
           </div>
         </ListItem>
       )) }
