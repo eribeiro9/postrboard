@@ -45,9 +45,24 @@ body {
   display: block;
 }
 
+.row {
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+}
+
+.border--bottom {
+  border-bottom: solid .1rem rgba(0,0,0,.1);
+}
+
+.grow {
+  flex-grow: 1;
+}
+
 .board-name-container {
+  min-width: 11rem;
   padding: 1rem 2rem;
-  display: inline;
 }
 
 .board-latestAction-container {
